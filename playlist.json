@@ -1,0 +1,29 @@
+[
+    {
+        "track": {
+            "name": "Любов",
+            "author": "Скрябін",
+            "year": 2005,
+            "duration": "3:14"
+        },
+        "genre": "Поп "
+    },
+    {
+        "track": {
+            "name": "Бета-каротин",
+            "author": "Boombox",
+            "year": 2005,
+            "duration": "4:05"
+        },
+        "genre": "Рок "
+    },
+    {
+        "track": {
+            "name": "Останній день",
+            "author": "MamaRika",
+            "year": 2023,
+            "duration": "2:29"
+        },
+        "genre": "Поп "
+    }
+]

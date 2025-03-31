@@ -16,6 +16,8 @@ class Song:
     def length(self):
         return f'Кількість слів у назві пісні "{self.a}":{len(self.a.split())}'
 
+    def __repr__(self):
+        return f'Song("{self.a}", "{self.b}", {self.c})'
 
 class Track(Song):
     def __init__(self,name="Останній день",author="MamaRika", year=2023,duration="2:29"):
@@ -34,6 +36,9 @@ class Track(Song):
         new_sec = all_sec%60
         new_duration = f'Тривалість пісні після доданих {int(sec)} секунд: {new_min}:{new_sec}'
         return Track(self.a, self.b, self.c, new_duration)
+
+    def __repr__(self):
+        return f'Track("{self.a}", "{self.b}", {self.c}, "{self.d}")'
 
 class Playlist:
     def __init__(self):
@@ -68,10 +73,10 @@ class Playlist:
         return f'Тривалість всіх пісень за цими жанрами: {result.rstrip(", ")}' 
 
     def __str__(self):
-       result = ""
-       for track, genre in self.tracks:
-           result += f'{track} - {genre}'
-       return f'Плейлист з {len(self.tracks)} треків: \n{result}'
+        result = ""
+        for track, genre in self.tracks:
+            result += f'{track} - {genre.strip()}\n'
+        return f'\nПлейлист з {len(self.tracks)} треків: \n{result}'
 
 
 s = Song("Любов","Скрябін",2005)
@@ -96,7 +101,7 @@ print(S + 87)
 print(M + 18)
 p = Playlist()
 p.load_from_file("tracks.txt")
-p.add_track("Любов",'\n'" Скрябін",2005,"3:14", "Поп")
-p.add_track("Бери своє",'\n'" Антитіла", 2008, "3:40", "Рок") 
+p.add_track("Любов"," Скрябін",2005,"3:14", "Поп")
+p.add_track("Бери своє"," Антитіла", 2008, "3:40", "Рок") 
 print(p)
 print(p.total_duration_by_genre())
