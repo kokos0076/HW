@@ -22,11 +22,11 @@ print("\nPickle:")
 print(loaded_playlist)
 
 # Shelve Серіалізація 
-with shelve.open("playlist_shelve") as db:
+with shelve.open("playlist.slv") as db:
     db["collection"] = playlist
 
 # Shelve Десеріалізація
-with shelve.open("playlist_shelve") as db:
+with shelve.open("playlist.slv") as db:
     shelve_playlist = db["collection"]
 print("\nShelve:")
 print(shelve_playlist)
